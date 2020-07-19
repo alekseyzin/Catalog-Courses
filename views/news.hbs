@@ -1,0 +1,26 @@
+
+<div class="news-head">
+    <h1>News</h1>
+    <a href="/news/add" class="btn btn-primary">+ Add News</a>
+</div>
+{{#if news.length}}
+{{#each news}}
+<div class="row">
+    <div class="col s6 offset-s3">
+        <div class="card">
+            <a href="/news/n-{{id}}">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="{{img}}">
+                </div>
+            </a>
+            <div class="card-content">
+                <a href="/news/n-{{id}}"><span class="card-title activator grey-text text-darken-4">{{title}}</span></a>
+                <p><a href="/news/{{id}}/edit?allow=true">Edit</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}
+{{else}}
+<p>We don't news for you</p>
+{{/if}}
